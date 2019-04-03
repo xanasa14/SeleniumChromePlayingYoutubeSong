@@ -14,8 +14,8 @@ public class main {
 		driver = new ChromeDriver(); 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		
 		driver.get("https://www.youtube.com");
 		searching();
@@ -43,6 +43,8 @@ public class main {
 
 			Thread.sleep(3000);			
 			driver.findElement(By.linkText("Finger Eleven - Paralyzer lyrics")).click();
+			Thread.sleep(6000);
+			driver.findElement(By.xpath("//*[@id=\"ad-text:t\"]")).click();
 			
 			
 		}catch(InterruptedException e){e.printStackTrace();}
@@ -56,3 +58,4 @@ public class main {
 	}
 
 }
+
